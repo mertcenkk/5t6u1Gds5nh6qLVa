@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Tweets</title>
+</head>
+<body>
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light border">
+  <a class="navbar-brand font-weight-bold" href="/">Main</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active text-info font-weight-bold" href="/order_by_reply">Sort By Reply</a>
+      <a class="nav-item nav-link active text-danger font-weight-bold" href="/order_by_like">Sort By Like</a>
+      <a class="nav-item nav-link active text-primary font-weight-bold" href="/order_by_retweet">Sort By Retweet</a>
+      <a class="nav-item nav-link active text-secondary font-weight-bold" href="/order_by_date">Sort By Date</a>
+    </div>
+  </div>
+</nav>
+<h1> &nbsp</h1>
+<div class="col-6">
+<h2 style="color:gray">Total Tweet: {{count}}</h2>
+</div>
+{% for tweet in tweets %}
+<hr>
+<div class="col-sm-6">
+<h6 style="color:#5DADE2"> Tweet : {{ loop.index }}</h6>
+    <div class="card border border-secondary">
+        <div class="card-body">
+            <div class="row">
+
+                <p class="text-dark font-weight-bold">{{tweet["name"]}} &nbsp</p>
+                <p class="text-secondary">@{{ tweet["username"] }} &nbsp</p>
+            <p class="text-secondary">Date : {{ tweet["date"] }}</p>
+            </div>
+            <p class="card-text">{{ tweet["tweet"] }}</p>
+            <div class="row">
+                <p class="text-info font-weight-bold">Reply: {{ tweet["replies_count"] }}&nbsp</p>
+                <p class="text-danger font-weight-bold">Like: {{ tweet["like_count"] }}&nbsp</p>
+                <p class="text-primary font-weight-bold">Retweet: {{ tweet["retweet_count"] }}</p>
+
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+{% endfor %}
+<hr>
+</body>
+</html>
