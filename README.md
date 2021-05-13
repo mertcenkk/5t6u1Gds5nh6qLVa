@@ -24,7 +24,7 @@ python main.py
 ## Used Libraries
 <ul>
     <li>Flask</li>
-    <li>Twint</li>>
+    <li>Twint</li>
     <li>Twint</li>
 </ul>
  You can find Twint dependencies in requirements.txt
