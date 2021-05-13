@@ -25,12 +25,10 @@ python main.py
 <ul>
     <li>Flask</li>
     <li>Twint</li>
-    <li>Twint</li>
 </ul>
  You can find Twint dependencies in requirements.txt
  
 ## Notes
 
-  If you run the project first time, there will be no tweet_data.csv file and it'll fetch data from Twitter.
-It'll parse these data to a simple web project. When you run the project second time, it'll use the data fetched before. That's why if you
+  If you run the project first time, It'll use the data fetched before. That's why if you
 want to use new data, you have to delete tweet_data.csv file first. 
